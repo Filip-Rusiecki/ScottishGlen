@@ -21,7 +21,7 @@ namespace ScottishGlen
 
         ManagementObjectSearcher memorySearcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
 
-
+        ManagementObjectSearcher videoSearcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_VideoController");
 
 
 
@@ -48,7 +48,13 @@ namespace ScottishGlen
                 }
             }
 
-
+            foreach (ManagementObject queryObj in videoSearcher.Get())
+            {
+                {
+                    hardwareInformation.AppendLine(" Video Card: " + queryObj["Name"]);
+                    hardwareInformation.AppendLine(" Video Card Memory: " + queryObj["AdapterRAM"]);
+                }            
+            }
 
 
 

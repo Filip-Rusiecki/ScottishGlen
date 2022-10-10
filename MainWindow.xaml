@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:ScottishGlen"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#FF3C4A50">
+    <Grid Background="#FF28353A">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="39*"/>
             <ColumnDefinition Width="761*"/>
         </Grid.ColumnDefinitions>
         <Button x:Name="thisSystemInformation" Grid.Column="1" Content=" My System Information " HorizontalAlignment="Left" Margin="0,54,0,0" VerticalAlignment="Top" Width="165" Click="thisComputerInformation_Click"/>
-        <TextBox x:Name="textBoxDisplay" Grid.Column="1" HorizontalAlignment="Left" Height="335" Margin="228,54,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="482"/>
-        <Button x:Name="thisHardwareInformation" Grid.Column="1" Content="My Hardware Information" HorizontalAlignment="Left" Height="21" Margin="0,103,0,0" VerticalAlignment="Top" Width="165" Click="thisHardwareInformation_Click"/>
+        <TextBox x:Name="textBoxDisplay" Grid.Column="1" HorizontalAlignment="Left" Height="384" Margin="192,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="544" Background="#FF28353A"/>
+        <Button x:Name="getAllAssets" Grid.Column="1" Content="Show all devices" HorizontalAlignment="Left" Margin="0,122,0,0" VerticalAlignment="Top" Width="165" Click="getAllAssets_Click"/>
 
     </Grid>
 </Window>
