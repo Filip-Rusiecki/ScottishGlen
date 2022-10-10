@@ -65,9 +65,9 @@ namespace ScottishGlen
         {
             // get iformation from database and display it in a textbox
 
-           DbConnection conn = new databaseConnection.DbConnection();
-            DbGetAll getAll = new databaseConnection.DbGetAll(conn);
+            DbGetAll getAll = new DbGetAll();
 
+          
             textBoxDisplay.Text = getAll.ToString();
            
 
