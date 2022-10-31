@@ -15,7 +15,7 @@ namespace ScottishGlen.databaseConnection
         {
             // connect to the database
 
-
+          
             MySqlConnection connection = new MySqlConnection();
 
             string connetionString = null;
@@ -26,11 +26,11 @@ namespace ScottishGlen.databaseConnection
             try
             {
                 connection.Open();
-                
-                
-                MessageBox.Show("Connected");
-                
-              
+
+
+                MessageBox.Show("Connected"); // leave for testing the connection to the database
+
+
             }
             catch (Exception ex)
             {
@@ -38,8 +38,11 @@ namespace ScottishGlen.databaseConnection
                 connection.Close();
             }
         }
+
     }
+
 }
+
 
       
 

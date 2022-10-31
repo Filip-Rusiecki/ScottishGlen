@@ -6,14 +6,17 @@
         xmlns:local="clr-namespace:ScottishGlen"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#FF28353A">
+    <Grid Background="#FF28353A" Height="496" AutomationProperties.IsOffscreenBehavior="Onscreen">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="39*"/>
             <ColumnDefinition Width="761*"/>
         </Grid.ColumnDefinitions>
         <Button x:Name="thisSystemInformation" Grid.Column="1" Content=" My System Information " HorizontalAlignment="Left" Margin="0,54,0,0" VerticalAlignment="Top" Width="165" Click="thisComputerInformation_Click"/>
         <TextBox x:Name="textBoxDisplay" Grid.Column="1" HorizontalAlignment="Left" Height="384" Margin="192,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="544" Background="#FF28353A"/>
-        <Button x:Name="getAllAssets" Grid.Column="1" Content="Show all devices" HorizontalAlignment="Left" Margin="0,122,0,0" VerticalAlignment="Top" Width="165" Click="getAllAssets_Click"/>
+        <Button x:Name="getAllAssets" Grid.Column="1" Content="Show all devices" HorizontalAlignment="Left" Margin="0,230,0,0" VerticalAlignment="Top" Width="165" Click="getAllAssets_Click"/>
+        <Button x:Name ="addToDatabase" Content="Add This Device To Database" HorizontalAlignment="Left" Margin="0,95,0,0" VerticalAlignment="Top" Grid.Column="1" Width="165" Click="addToDatabase_Click"/>
+        <Button x:Name="search_btn" Grid.Column="1" Content="Find Device" HorizontalAlignment="Left" Margin="621,3,0,0" VerticalAlignment="Top" Click="search_btn_Click"/>
+        <Button x:Name="editAssets" Grid.Column="1" Content="Edit Assets" HorizontalAlignment="Left" Margin="520,3,0,0" VerticalAlignment="Top" Click="editAssets_Click"/>
 
     </Grid>
 </Window>

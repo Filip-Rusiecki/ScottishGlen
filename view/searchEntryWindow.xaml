@@ -1,0 +1,23 @@
+﻿<Window x:Class="ScottishGlen.view.searchEntryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScottishGlen.view"
+        mc:Ignorable="d"
+        Title="searchEntryWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="search_bar" HorizontalAlignment="Left" Margin="130,39,0,0" TextWrapping="Wrap" Text="find asset" VerticalAlignment="Top" Width="270" TextChanged="search_bar_TextChanged"/>
+        <Button x:Name="search_btn" Content="Find" HorizontalAlignment="Left" Margin="422,37,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.303,0.503" Click="Button_Click"/>
+        <TextBlock x:Name="searchDisplayBox" HorizontalAlignment="Left" Margin="73,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="633" Height="238" Foreground="#FFD0D7E0">
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
+
+
+    </Grid>
+</Window>

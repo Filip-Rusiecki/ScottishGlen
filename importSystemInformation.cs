@@ -25,7 +25,8 @@ namespace ScottishGlen
         string systemPageSize = System.Environment.SystemPageSize.ToString();
         string version = System.Environment.Version.ToString();
         string workingSet = System.Environment.WorkingSet.ToString();
-        
+        string manufacturer = System.Environment.GetEnvironmentVariable("MANUFACTURER");
+
 
         public string GetMACAddress()
         {
@@ -57,14 +58,26 @@ namespace ScottishGlen
             return localIP;
         }
 
+        public string GetManufacturer()
+        {
+            string manufacturer = "";
+            foreach (System.Management.ManagementObject mo in new System.Management.ManagementClass("Win32_ComputerSystem").GetInstances())
+            {
+                manufacturer = mo["Manufacturer"].ToString();
+                break;
+            }
+            return manufacturer;
+        }
+
 
 
         public override string ToString()
         {
             // StringBuilder 
-            systemInformation.AppendLine("IP Address : " + GetIPAddress());
+            systemInformation.AppendLine("IP Address : " + GetIPAddress()); 
             systemInformation.AppendLine("MAC Address : " + GetMACAddress());
             systemInformation.AppendLine("Computer Name: " + computerName);
+            systemInformation.AppendLine("Manufacturer: " + manufacturer);
             systemInformation.AppendLine("User Name: " + userName);
             systemInformation.AppendLine("Operating System: " + operatingSystem);
             systemInformation.AppendLine("System Directory: " + systemDirectory);

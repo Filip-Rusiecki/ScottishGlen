@@ -1,0 +1,21 @@
+﻿<Window x:Class="ScottishGlen.view.editEntryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScottishGlen.view"
+        mc:Ignorable="d"
+        Title="editEntryWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="systemName_textBox" HorizontalAlignment="Left" Margin="75,53,0,0" TextWrapping="Wrap" Text="system Name" VerticalAlignment="Top" Width="591" Background="#FFB1A0A0" TextChanged="systemName_textBox_TextChanged"/>
+        <TextBox x:Name="hardwareInfo_textBox" HorizontalAlignment="Left" Margin="75,76,0,0" TextWrapping="Wrap" Text="Hardware Info" VerticalAlignment="Top" Width="591" Background="#FFB1A0A0" TextChanged="hardwareInfo_textBox_TextChanged" Height="77"/>
+        <TextBox x:Name="Os_textBox" HorizontalAlignment="Left" Margin="75,158,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" Width="591" Background="#FFB1A0A0" TextChanged="Os_textBox_TextChanged" Height="45"/>
+        <TextBox x:Name="ipAddress_textBox" HorizontalAlignment="Left" Margin="75,0,0,0" TextWrapping="Wrap" Text="IP address" VerticalAlignment="Center" Width="591" Background="#FFB1A0A0" TextChanged="ipAddress_textBox_TextChanged"/>
+        <TextBox x:Name="manufacturer_textBox" HorizontalAlignment="Left" Margin="75,231,0,0" TextWrapping="Wrap" Text="Manufacturer" VerticalAlignment="Top" Width="591" Background="#FFB1A0A0" TextChanged="manufacturer_textBox_TextChanged"/>
+        <TextBox x:Name="deviceType_textBox" HorizontalAlignment="Left" Margin="75,254,0,0" TextWrapping="Wrap" Text="Device Type" VerticalAlignment="Top" Width="591" Background="#FFB1A0A0" TextChanged="deviceType_textBoxTextChanged"/>
+        <TextBox x:Name="serialNumber_textBox" HorizontalAlignment="Left" Margin="75,277,0,0" TextWrapping="Wrap" Text="Serial Number" VerticalAlignment="Top" Width="591" Background="#FFB1A0A0" TextChanged="serialNumber_textBox_TextChanged"/>
+        <TextBox x:Name="notes_textBox" HorizontalAlignment="Left" Margin="75,321,0,0" TextWrapping="Wrap" Text="Notes" VerticalAlignment="Top" Width="591" Background="#FFB1A0A0" TextChanged="notes_textBoxTextChanged" Height="82"/>
+        <Button x:Name="edit_btn" Content="Edit" HorizontalAlignment="Left" Margin="746,383,0,0" VerticalAlignment="Top" Click="edit_btn_Click"/>
+
+    </Grid>
+</Window>

@@ -1,23 +1,10 @@
 ﻿
 using ScottishGlen.databaseConnection;
 using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
 using MySql.Data.MySqlClient;
 using DbConnection = ScottishGlen.databaseConnection.DbConnection;
+using ScottishGlen.view;
 
 namespace ScottishGlen
 {
@@ -42,10 +29,6 @@ namespace ScottishGlen
         }
 
 
-            
-
-
-
         private void thisComputerInformation_Click(object sender, RoutedEventArgs e)
         {
 
@@ -57,6 +40,8 @@ namespace ScottishGlen
                 textBoxDisplay.Text = systemInformation.ToString()
                 + hardwareInformation.ToString();
 
+           
+            
             // note: not all hardware info is needed
 
         }
@@ -65,14 +50,37 @@ namespace ScottishGlen
         {
             // get iformation from database and display it in a textbox
 
-            DbGetAll getAll = new DbGetAll();
 
-          
-            textBoxDisplay.Text = getAll.ToString();
-           
+            DbGetAll dbGetAll = new DbGetAll(this);
+
 
         }
 
+        private void addToDatabase_Click(object sender, RoutedEventArgs e)
+        {
+            DbAddThisAsset dbAdd = new DbAddThisAsset();
+        }
+
+        private void search_btn_Click(object sender, RoutedEventArgs e)
+        {
+            // open searchEntryWindow
+
+            searchEntryWindow searchEntryWindow = new searchEntryWindow(this);
+
+            searchEntryWindow.Show();
+            
+
+
+
+
+        }
+
+        private void editAssets_Click(object sender, RoutedEventArgs e)
+        {
+            editEntryWindow entryWindow = new editEntryWindow();
+
+            entryWindow.Show();
+        }
     }
 
     }
