@@ -5,18 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScottishGlen.view"
         mc:Ignorable="d"
-        Title="searchEntryWindow" Height="450" Width="800">
-    <Grid>
-        <TextBox x:Name="search_bar" HorizontalAlignment="Left" Margin="130,39,0,0" TextWrapping="Wrap" Text="find asset" VerticalAlignment="Top" Width="270" TextChanged="search_bar_TextChanged"/>
-        <Button x:Name="search_btn" Content="Find" HorizontalAlignment="Left" Margin="422,37,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.303,0.503" Click="Button_Click"/>
-        <TextBlock x:Name="searchDisplayBox" HorizontalAlignment="Left" Margin="73,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="633" Height="238" Foreground="#FFD0D7E0">
-            <TextBlock.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </TextBlock.Background>
-        </TextBlock>
+        Title="searchEntryWindow" Height="529" Width="922">
+    <Grid Background="#FF1D2123" Margin="0,0,0,0">
+        <TextBox x:Name="search_bar" HorizontalAlignment="Left" Margin="72,47,0,0" TextWrapping="Wrap" Text="find asset" VerticalAlignment="Top" Width="270" TextChanged="search_bar_TextChanged" Cursor="Pen" />
+        <Button x:Name="search_btn" Content="Find" HorizontalAlignment="Left" Margin="363,46,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.303,0.503" Click="Button_Click" Width="48" />
+        <TextBox x:Name="searchDisplayBox" HorizontalAlignment="Left" Height="387" Margin="45,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="779" Background="#FF364246" CaretBrush="Black" UndoLimit="1000"/>
+
+        <Button x:Name="back_btn" Content="Back" HorizontalAlignment="Left" Margin="729,10,0,0" VerticalAlignment="Top" Width="49" Click="back_btn_Click"/>
 
 
     </Grid>

@@ -37,7 +37,22 @@ namespace ScottishGlen.view
 
         private void search_bar_TextChanged(object sender, TextChangedEventArgs e)
         {
+          
+            
+           
+        }
 
+        private void back_btn_Click(object sender, RoutedEventArgs e)
+        {
+            // back button to main screen
+
+            MainWindow main = new MainWindow();
+
+            main.ShowDialog();
+
+            this.Close();
+            
+            
         }
     }
 }

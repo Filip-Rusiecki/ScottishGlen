@@ -23,7 +23,6 @@ namespace ScottishGlen
 
 
             // load the splash screen 
-      
 
 
         }
@@ -53,6 +52,10 @@ namespace ScottishGlen
 
             DbGetAll dbGetAll = new DbGetAll(this);
 
+            // if user is not logged in then display an error message
+            
+            
+
 
         }
 
@@ -68,6 +71,8 @@ namespace ScottishGlen
             searchEntryWindow searchEntryWindow = new searchEntryWindow(this);
 
             searchEntryWindow.Show();
+
+            this.Close();
             
 
 
@@ -81,6 +86,23 @@ namespace ScottishGlen
 
             entryWindow.Show();
         }
+
+  // check if user is logged in 
+
+        
+
+        
+        private void login_btn_Click(object sender, RoutedEventArgs e)
+        {
+            loginPage loginPage = new loginPage();
+
+            loginPage.Show();
+
+
+        }
+
+      
+
     }
 
     }

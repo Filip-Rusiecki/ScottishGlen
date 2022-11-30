@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Management;
 using Microsoft.Identity.Client;
+using System.Security.Cryptography;
 
 namespace ScottishGlen.databaseConnection
 {
@@ -88,7 +89,7 @@ namespace ScottishGlen.databaseConnection
 
             //check if the data is already in the database
 
-
+            
 
 
             connection.Close();

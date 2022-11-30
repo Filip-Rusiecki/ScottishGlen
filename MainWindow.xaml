@@ -5,18 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScottishGlen"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#FF28353A" Height="496" AutomationProperties.IsOffscreenBehavior="Onscreen">
+        Title="MainWindow" Height="529" Width="922">
+    <Grid Background="#FF1D2123" AutomationProperties.IsOffscreenBehavior="Onscreen" Margin="0,0,0,0" >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="39*"/>
-            <ColumnDefinition Width="761*"/>
+            <ColumnDefinition Width="43*"/>
+            <ColumnDefinition Width="222*"/>
+            <ColumnDefinition Width="623*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="thisSystemInformation" Grid.Column="1" Content=" My System Information " HorizontalAlignment="Left" Margin="0,54,0,0" VerticalAlignment="Top" Width="165" Click="thisComputerInformation_Click"/>
-        <TextBox x:Name="textBoxDisplay" Grid.Column="1" HorizontalAlignment="Left" Height="384" Margin="192,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="544" Background="#FF28353A"/>
-        <Button x:Name="getAllAssets" Grid.Column="1" Content="Show all devices" HorizontalAlignment="Left" Margin="0,230,0,0" VerticalAlignment="Top" Width="165" Click="getAllAssets_Click"/>
-        <Button x:Name ="addToDatabase" Content="Add This Device To Database" HorizontalAlignment="Left" Margin="0,95,0,0" VerticalAlignment="Top" Grid.Column="1" Width="165" Click="addToDatabase_Click"/>
-        <Button x:Name="search_btn" Grid.Column="1" Content="Find Device" HorizontalAlignment="Left" Margin="621,3,0,0" VerticalAlignment="Top" Click="search_btn_Click"/>
-        <Button x:Name="editAssets" Grid.Column="1" Content="Edit Assets" HorizontalAlignment="Left" Margin="520,3,0,0" VerticalAlignment="Top" Click="editAssets_Click"/>
+        <Button x:Name="thisSystemInformation" Content=" My System Information " HorizontalAlignment="Left" Margin="43,54,0,0" VerticalAlignment="Top" Width="165" Click="thisComputerInformation_Click" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="textBoxDisplay" Grid.Column="1" HorizontalAlignment="Left" Height="434" Margin="192,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="625" Background="#FF364246" CaretBrush="Black" UndoLimit="1000" Grid.ColumnSpan="2"/>
+        <Button x:Name="getAllAssets" Content="Show all devices" HorizontalAlignment="Left" Margin="43,230,0,0" VerticalAlignment="Top" Width="165" Click="getAllAssets_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name ="addToDatabase" Content="Add This Device To Database" HorizontalAlignment="Left" Margin="43,95,0,0" VerticalAlignment="Top" Width="165" Click="addToDatabase_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="search_btn" Grid.Column="2" Content="Find Device" HorizontalAlignment="Left" Margin="399,3,0,0" VerticalAlignment="Top" Click="search_btn_Click"/>
+        <Button x:Name="editAssets" Grid.Column="2" Content="Edit Assets" HorizontalAlignment="Left" Margin="298,3,0,0" VerticalAlignment="Top" Click="editAssets_Click"/>
+        <Button x:Name="login_btn" Content="Log In" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="22,13,0,0" VerticalAlignment="Top" Click="login_btn_Click"/>
 
     </Grid>
 </Window>

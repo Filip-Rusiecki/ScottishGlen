@@ -19,11 +19,11 @@ namespace ScottishGlen.databaseConnection
         private MainWindow mainWindow;
 
         public DbGetAll(MainWindow mainWindow)
-     
+
         {
 
             // connect to the database
-           
+
 
             StringBuilder sb = new StringBuilder();
 
@@ -49,13 +49,15 @@ namespace ScottishGlen.databaseConnection
 
             MySqlDataReader reader = cmd.ExecuteReader();
 
-           while(reader.Read()) {
+            while (reader.Read())
+            {
 
-               
-                
 
-                sb.AppendFormat("id:{0}\n Device name:{1}\n hardware information:{2}\n OS:{3}\n ip address:{4}\n Manufacturer:{5}\n Type:{6}\n Serial Number:{7}\n " +
-                    "Date added:{8} \n Notes:{9} \n", reader.GetString(0), reader.GetString(1), reader.GetString(2),
+
+
+                sb.AppendFormat(" " +
+                    "id:{0}\n\t Device name :{1} \n\t hardware information :{2}\n\t OS :{3}\n\t ip address:{4}\n\t Manufacturer :{5}\n\t Type :{6}\n\t Serial Number :{7}\n\t " +
+                    "Date added :{8} \n\t Notes :{9} \n\t\n", reader.GetString(0), reader.GetString(1), reader.GetString(2),
                  reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9));
 
 
@@ -64,8 +66,8 @@ namespace ScottishGlen.databaseConnection
 
             mainWindow.textBoxDisplay.Text = sb.ToString();
 
-     
-            
+
+
 
 
             reader.Close();
@@ -75,6 +77,5 @@ namespace ScottishGlen.databaseConnection
 
     }
 
-     
- }
 
+}
