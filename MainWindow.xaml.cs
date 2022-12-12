@@ -5,6 +5,7 @@ using System.Windows;
 using MySql.Data.MySqlClient;
 using DbConnection = ScottishGlen.databaseConnection.DbConnection;
 using ScottishGlen.view;
+using Google.Protobuf.WellKnownTypes;
 
 namespace ScottishGlen
 {
@@ -18,11 +19,12 @@ namespace ScottishGlen
 
         public MainWindow()
         {
-            // add splashscreen and load the components (import hardware + system + connect to db)
+
+
             InitializeComponent();
 
+            splashScreen splashScreen = new splashScreen();
 
-            // load the splash screen 
 
 
         }
@@ -101,9 +103,18 @@ namespace ScottishGlen
 
         }
 
-      
+        private void nist_btn_Click(object sender, RoutedEventArgs e)
+        {
+            VulnrabilityCheck check = new VulnrabilityCheck();
 
-    }
+            // Api/cveDump to display on screen
+
+            textBoxDisplay.Text = "file saved ";
+
+
+
+        }
+    }   
 
     }
 

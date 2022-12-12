@@ -32,11 +32,11 @@ namespace ScottishGlen.databaseConnection
             string connetionString = null;
 
             connetionString = "server=lochnagar.abertay.ac.uk;database=sql2106215;uid=sql2106215;pwd=ZxLeTfsEDKLh;";
-            connection = new MySqlConnection(connetionString); //leave if want to connect to a different database (prototype)
+            connection = new MySqlConnection(connetionString); 
             try
             {
                 connection.Open();
-                MessageBox.Show("Connected"); //   leave for testing the connection to the database
+       
             }
             catch (Exception ex)
             {

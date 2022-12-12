@@ -1,6 +1,7 @@
 ﻿using Microsoft.Identity.Client;
 using MySql.Data.MySqlClient;
 using ScottishGlen.view;
+using sun.security.util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,38 +39,72 @@ namespace ScottishGlen.databaseConnection
                 MessageBox.Show("Connection failed ");
                 connection.Close();
             }
-            // get all users (username + password) where username = ? and password = ?
-
-            // get username and password from login page text boxes
+          
             loginPage login = new loginPage();
-            
+
             string username = login.username_txtBox.Text.ToString();
-            string password = "test" ;
+            string password = login.password_txtBox.Password.ToString();
 
-            string queryName = "SELECT * FROM ScottishGlenUsers WHERE username  = '" + username + "'" ;
-            MySqlCommand command = new MySqlCommand(queryName, connection);
+            // password hash + salt
 
-            // show the user if the username exists
 
-            MySqlDataReader reader = command.ExecuteReader();
+            string salt = "salt";
 
-            if (reader.HasRows)
+            string passwordHash = HashString(password + salt);
+
+            // query to check if the username and password match
+   
+
+            string sql = "SELECT * FROM ScottishGlenUsers WHERE username = '" + username + "' AND password = '" + passwordHash + "'";
+
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
+
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
             {
-                MessageBox.Show("Username exists");
+                string usernameFromDb = rdr[1].ToString();
+                string passwordFromDb = rdr[2].ToString();
+
+                if (usernameFromDb == username && passwordFromDb == passwordHash)
+                {
+                    MessageBox.Show("Login successful");
+                }
+                else
+                {
+                    MessageBox.Show("Login failed");
+                }
             }
-            else
-            {
-                MessageBox.Show("Username does not exist");
-            }
 
+            rdr.Close();
 
+            
 
-
-
-
-
+            
         }
 
+        public static string HashString(string password)
+        {
+            // hashing the password
+
+            byte[] salt;
+
+            new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+
+            var pbkdf2 = new Rfc2898DeriveBytes(password, salt, 10000);
+
+            byte[] hash = pbkdf2.GetBytes(20);
+
+            byte[] hashBytes = new byte[36];
+
+            Array.Copy(salt, 0, hashBytes, 0, 16);
+
+            Array.Copy(hash, 0, hashBytes, 16, 20);
+
+            string savedPasswordHash = Convert.ToBase64String(hashBytes);
+
+            return savedPasswordHash;
+        }
     }
 
 

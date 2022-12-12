@@ -22,6 +22,21 @@ namespace ScottishGlen.view
         public splashScreen()
         {
             InitializeComponent();
+            // close after 5 seconds
+
+            System.Threading.Thread.Sleep(5000);
+
+            this.Close();
+
+            // open login page
+
+            loginPage login = new loginPage();
+
+            login.Show();
+
+            
+
+
         }
     }
 }

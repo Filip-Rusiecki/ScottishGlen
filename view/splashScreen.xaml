@@ -1,6 +1,7 @@
-﻿<Window x:Class="ScottishGlen.view.splashScreen"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="ScottishGlen.view.splashScreen"
         ShowInTaskbar="False" 
         ResizeMode="NoResize" 
         WindowStartupLocation="CenterScreen"
@@ -10,12 +11,11 @@
         Title="Sandbox Splash Screen" 
         SizeToContent="Width" 
         Topmost="True" 
-        Height="{Binding RelativeSource={RelativeSource Self}, 
-                         Path=ActualWidth}">
+        Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" av:DesignWidth="388.502">
 
     <Border CornerRadius="8" Margin="15">
         <Border.Background>
-            <ImageBrush ImageSource="Resources\scottishglen.jpeg" 
+            <ImageBrush ImageSource="C:\Users\flaqy\Desktop\Uni Projects\ScottishGlen\Images\SG - Splash.png" 
                         Stretch="Fill" />
         </Border.Background>
         <Border.Effect>
@@ -24,17 +24,7 @@
                               Opacity="0.75" 
                               ShadowDepth="15" />
         </Border.Effect>
+        <Image/>
 
-        <TextBlock FontSize="40"
-                   FontFamily="Bauhaus 93"
-                   Foreground="White"
-                   Margin="10"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   Text="WPF 3.5 Sandbox">
-            <TextBlock.Effect>
-                <DropShadowEffect Color="Black" />
-            </TextBlock.Effect>
-        </TextBlock>
     </Border>
 </Window>

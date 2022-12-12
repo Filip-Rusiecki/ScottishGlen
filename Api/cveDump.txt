@@ -1,0 +1,4764 @@
+[
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2021-38492",
+        "ASSIGNER": "security@mozilla.org"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "NVD-CWE-noinfo"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://www.mozilla.org/security/advisories/mfsa2021-41/",
+            "name": "https://www.mozilla.org/security/advisories/mfsa2021-41/",
+            "refsource": "MISC",
+            "tags": [
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "https://www.mozilla.org/security/advisories/mfsa2021-40/",
+            "name": "https://www.mozilla.org/security/advisories/mfsa2021-40/",
+            "refsource": "MISC",
+            "tags": [
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "https://www.mozilla.org/security/advisories/mfsa2021-42/",
+            "name": "https://www.mozilla.org/security/advisories/mfsa2021-42/",
+            "refsource": "MISC",
+            "tags": [
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "https://www.mozilla.org/security/advisories/mfsa2021-38/",
+            "name": "https://www.mozilla.org/security/advisories/mfsa2021-38/",
+            "refsource": "MISC",
+            "tags": [
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "https://www.mozilla.org/security/advisories/mfsa2021-39/",
+            "name": "https://www.mozilla.org/security/advisories/mfsa2021-39/",
+            "refsource": "MISC",
+            "tags": [
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1721107",
+            "name": "https://bugzilla.mozilla.org/show_bug.cgi?id=1721107",
+            "refsource": "MISC",
+            "tags": [
+              "Exploit",
+              "Issue Tracking",
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "https://security.gentoo.org/glsa/202208-14",
+            "name": "GLSA-202208-14",
+            "refsource": "GENTOO",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "When delegating navigations to the operating system, Firefox would accept the `mk` scheme which might allow attackers to launch pages and execute scripts in Internet Explorer in unprivileged mode. *This bug only affects Firefox for Windows. Other operating systems are unaffected.*. This vulnerability affects Firefox < 92, Thunderbird < 91.1, Thunderbird < 78.14, Firefox ESR < 78.14, and Firefox ESR < 91.1."
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mozilla:firefox:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "92.0",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mozilla:firefox_esr:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "91.0",
+                  "versionEndExcluding": "91.1",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mozilla:firefox_esr:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "78.14",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mozilla:thunderbird:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "91.0",
+                  "versionEndExcluding": "91.1",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mozilla:thunderbird:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "78.14",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+          "attackVector": "NETWORK",
+          "attackComplexity": "LOW",
+          "privilegesRequired": "NONE",
+          "userInteraction": "REQUIRED",
+          "scope": "UNCHANGED",
+          "confidentialityImpact": "NONE",
+          "integrityImpact": "HIGH",
+          "availabilityImpact": "NONE",
+          "baseScore": 6.5,
+          "baseSeverity": "MEDIUM"
+        },
+        "exploitabilityScore": 2.8,
+        "impactScore": 3.6
+      },
+      "baseMetricV2": {
+        "cvssV2": {
+          "version": "2.0",
+          "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+          "accessVector": "NETWORK",
+          "accessComplexity": "MEDIUM",
+          "authentication": "NONE",
+          "confidentialityImpact": "NONE",
+          "integrityImpact": "PARTIAL",
+          "availabilityImpact": "NONE",
+          "baseScore": 4.3
+        },
+        "severity": "MEDIUM",
+        "exploitabilityScore": 8.6,
+        "impactScore": 2.9,
+        "acInsufInfo": false,
+        "obtainAllPrivilege": false,
+        "obtainUserPrivilege": false,
+        "obtainOtherPrivilege": false,
+        "userInteractionRequired": true
+      }
+    },
+    "publishedDate": "2021-11-03T01:15Z",
+    "lastModifiedDate": "2022-12-09T19:19Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2016-0985",
+        "ASSIGNER": "psirt@adobe.com"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-843"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://helpx.adobe.com/security/products/flash-player/apsb16-04.html",
+            "name": "https://helpx.adobe.com/security/products/flash-player/apsb16-04.html",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Patch",
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "https://security.gentoo.org/glsa/201603-07",
+            "name": "GLSA-201603-07",
+            "refsource": "GENTOO",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://rhn.redhat.com/errata/RHSA-2016-0166.html",
+            "name": "RHSA-2016:0166",
+            "refsource": "REDHAT",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://lists.opensuse.org/opensuse-security-announce/2016-02/msg00027.html",
+            "name": "SUSE-SU-2016:0400",
+            "refsource": "SUSE",
+            "tags": [
+              "Broken Link",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://www.securitytracker.com/id/1034970",
+            "name": "1034970",
+            "refsource": "SECTRACK",
+            "tags": [
+              "Broken Link",
+              "Third Party Advisory",
+              "VDB Entry"
+            ]
+          },
+          {
+            "url": "http://lists.opensuse.org/opensuse-security-announce/2016-02/msg00029.html",
+            "name": "openSUSE-SU-2016:0412",
+            "refsource": "SUSE",
+            "tags": [
+              "Broken Link",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://lists.opensuse.org/opensuse-security-announce/2016-02/msg00025.html",
+            "name": "SUSE-SU-2016:0398",
+            "refsource": "SUSE",
+            "tags": [
+              "Broken Link",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://lists.opensuse.org/opensuse-security-announce/2016-02/msg00030.html",
+            "name": "openSUSE-SU-2016:0415",
+            "refsource": "SUSE",
+            "tags": [
+              "Broken Link",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://www.exploit-db.com/exploits/39461/",
+            "name": "39461",
+            "refsource": "EXPLOIT-DB",
+            "tags": [
+              "Exploit",
+              "Third Party Advisory",
+              "VDB Entry"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "Adobe Flash Player before 18.0.0.329 and 19.x and 20.x before 20.0.0.306 on Windows and OS X and before 11.2.202.569 on Linux, Adobe AIR before 20.0.0.260, Adobe AIR SDK before 20.0.0.260, and Adobe AIR SDK & Compiler before 20.0.0.260 allow attackers to execute arbitrary code by leveraging an unspecified \"type confusion.\""
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:adobe:flash_player:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "11.2.202.559",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:adobe:flash_player_desktop_runtime:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "20.0.0.286",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:adobe:flash_player:*:*:*:*:esr:*:*:*",
+                  "versionEndIncluding": "18.0.0.326",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_8.1:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_10:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:adobe:flash_player:*:*:*:*:*:internet_explorer:*:*",
+                  "versionEndIncluding": "20.0.0.272",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:adobe:flash_player:*:*:*:*:*:chrome:*:*",
+                  "versionEndIncluding": "20.0.0.286",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:google:chrome_os:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_10:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:adobe:flash_player:*:*:*:*:*:edge:*:*",
+                  "versionEndIncluding": "20.0.0.272",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:adobe:air_desktop_runtime:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "20.0.0.233",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:adobe:air_sdk:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "20.0.0.233",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:adobe:air_sdk_\\&_compiler:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "20.0.0.233",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          "attackVector": "NETWORK",
+          "attackComplexity": "LOW",
+          "privilegesRequired": "NONE",
+          "userInteraction": "REQUIRED",
+          "scope": "UNCHANGED",
+          "confidentialityImpact": "HIGH",
+          "integrityImpact": "HIGH",
+          "availabilityImpact": "HIGH",
+          "baseScore": 8.8,
+          "baseSeverity": "HIGH"
+        },
+        "exploitabilityScore": 2.8,
+        "impactScore": 5.9
+      },
+      "baseMetricV2": {
+        "cvssV2": {
+          "version": "2.0",
+          "vectorString": "AV:N/AC:M/Au:N/C:C/I:C/A:C",
+          "accessVector": "NETWORK",
+          "accessComplexity": "MEDIUM",
+          "authentication": "NONE",
+          "confidentialityImpact": "COMPLETE",
+          "integrityImpact": "COMPLETE",
+          "availabilityImpact": "COMPLETE",
+          "baseScore": 9.3
+        },
+        "severity": "HIGH",
+        "exploitabilityScore": 8.6,
+        "impactScore": 10.0,
+        "obtainAllPrivilege": false,
+        "obtainUserPrivilege": false,
+        "obtainOtherPrivilege": false,
+        "userInteractionRequired": true
+      }
+    },
+    "publishedDate": "2016-02-10T20:59Z",
+    "lastModifiedDate": "2022-12-09T17:05Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2019-4057",
+        "ASSIGNER": "psirt@us.ibm.com"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "NVD-CWE-noinfo"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://www.ibm.com/support/docview.wss?uid=ibm10880735",
+            "name": "https://www.ibm.com/support/docview.wss?uid=ibm10880735",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/156567",
+            "name": "ibm-db2-cve20194057-priv-escalation (156567)",
+            "refsource": "XF",
+            "tags": [
+              "VDB Entry",
+              "Vendor Advisory"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "IBM DB2 for Linux, UNIX and Windows (includes DB2 Connect Server) 9.7, 10.1, 10.5, and 11.1 could allow malicious user with access to the DB2 instance account to leverage a fenced execution process to execute arbitrary code as root. IBM X-Force ID: 156567."
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.1.0.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.11:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:11.1.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.1.0.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.1.0.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.9:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.1.0.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.1.0.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:11.1.1.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:11.1.2.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:11.1.3.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.1.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.9:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.1.0.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:11.1.4.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+          "attackVector": "LOCAL",
+          "attackComplexity": "LOW",
+          "privilegesRequired": "HIGH",
+          "userInteraction": "NONE",
+          "scope": "UNCHANGED",
+          "confidentialityImpact": "HIGH",
+          "integrityImpact": "HIGH",
+          "availabilityImpact": "HIGH",
+          "baseScore": 6.7,
+          "baseSeverity": "MEDIUM"
+        },
+        "exploitabilityScore": 0.8,
+        "impactScore": 5.9
+      },
+      "baseMetricV2": {
+        "cvssV2": {
+          "version": "2.0",
+          "vectorString": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+          "accessVector": "LOCAL",
+          "accessComplexity": "LOW",
+          "authentication": "NONE",
+          "confidentialityImpact": "COMPLETE",
+          "integrityImpact": "COMPLETE",
+          "availabilityImpact": "COMPLETE",
+          "baseScore": 7.2
+        },
+        "severity": "HIGH",
+        "exploitabilityScore": 3.9,
+        "impactScore": 10.0,
+        "acInsufInfo": false,
+        "obtainAllPrivilege": false,
+        "obtainUserPrivilege": false,
+        "obtainOtherPrivilege": false,
+        "userInteractionRequired": false
+      }
+    },
+    "publishedDate": "2019-07-01T15:15Z",
+    "lastModifiedDate": "2022-12-09T16:11Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2022-41057",
+        "ASSIGNER": "secure@microsoft.com"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "NVD-CWE-noinfo"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2022-41057",
+            "name": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2022-41057",
+            "refsource": "MISC",
+            "tags": [
+              "Patch",
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "http://packetstormsecurity.com/files/170128/SentinelOne-sentinelagent-22.3.2.5-Privilege-Escalation.html",
+            "name": "http://packetstormsecurity.com/files/170128/SentinelOne-sentinelagent-22.3.2.5-Privilege-Escalation.html",
+            "refsource": "MISC",
+            "tags": []
+          },
+          {
+            "url": "http://packetstormsecurity.com/files/170128/Windows-HTTP.SYS-Kerberos-PAC-Verification-Bypass-Privilege-Escalation.html",
+            "name": "http://packetstormsecurity.com/files/170128/Windows-HTTP.SYS-Kerberos-PAC-Verification-Bypass-Privilege-Escalation.html",
+            "refsource": "MISC",
+            "tags": []
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "Windows HTTP.sys Elevation of Privilege Vulnerability."
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "OR",
+          "children": [],
+          "cpe_match": [
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_server_2008:r2:sp1:*:*:*:*:x64:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_10:1607:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_8.1:-:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_server_2016:-:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_server_2008:-:sp2:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_server_2012:-:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_10:-:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_8.1:-:*:*:*:rt:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_server_2019:-:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_10:1809:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_7:sp1:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_10:20h2:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_10:21h1:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_server_2022:-:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_11:-:*:*:*:*:*:x64:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_10:21h2:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_11:22h2:*:*:*:*:*:x64:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows_10:22h2:*:*:*:*:*:*:*",
+              "cpe_name": []
+            }
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "attackVector": "LOCAL",
+          "attackComplexity": "LOW",
+          "privilegesRequired": "LOW",
+          "userInteraction": "NONE",
+          "scope": "UNCHANGED",
+          "confidentialityImpact": "HIGH",
+          "integrityImpact": "HIGH",
+          "availabilityImpact": "HIGH",
+          "baseScore": 7.8,
+          "baseSeverity": "HIGH"
+        },
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.9
+      }
+    },
+    "publishedDate": "2022-11-09T22:15Z",
+    "lastModifiedDate": "2022-12-08T18:15Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2022-42778",
+        "ASSIGNER": "security@unisoc.com"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-862"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://www.unisoc.com/en_us/secy/announcementDetail/1599588060988411006",
+            "name": "https://www.unisoc.com/en_us/secy/announcementDetail/1599588060988411006",
+            "refsource": "MISC",
+            "tags": [
+              "Vendor Advisory"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "In windows manager service, there is a missing permission check. This could lead to set up windows manager service with no additional execution privileges needed."
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:google:android:11.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:h:unisoc:sc9863a:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:h:unisoc:sc9832e:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:h:unisoc:sc7731e:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:h:unisoc:t610:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:h:unisoc:t310:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:h:unisoc:t606:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:h:unisoc:t760:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:h:unisoc:t618:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:h:unisoc:t612:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:h:unisoc:s8000:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:h:unisoc:t616:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:h:unisoc:t770:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:h:unisoc:t820:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "attackVector": "LOCAL",
+          "attackComplexity": "LOW",
+          "privilegesRequired": "LOW",
+          "userInteraction": "NONE",
+          "scope": "UNCHANGED",
+          "confidentialityImpact": "HIGH",
+          "integrityImpact": "HIGH",
+          "availabilityImpact": "HIGH",
+          "baseScore": 7.8,
+          "baseSeverity": "HIGH"
+        },
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.9
+      }
+    },
+    "publishedDate": "2022-12-06T07:15Z",
+    "lastModifiedDate": "2022-12-08T04:29Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2021-21300",
+        "ASSIGNER": "security-advisories@github.com"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-59"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://github.com/git/git/commit/684dd4c2b414bcf648505e74498a608f28de4592",
+            "name": "https://github.com/git/git/commit/684dd4c2b414bcf648505e74498a608f28de4592",
+            "refsource": "MISC",
+            "tags": [
+              "Patch",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://git-scm.com/docs/gitattributes#_filter",
+            "name": "https://git-scm.com/docs/gitattributes#_filter",
+            "refsource": "MISC",
+            "tags": [
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "https://github.com/git/git/security/advisories/GHSA-8prw-h3cq-mghm",
+            "name": "https://github.com/git/git/security/advisories/GHSA-8prw-h3cq-mghm",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://lore.kernel.org/git/xmqqim6019yd.fsf@gitster.c.googlers.com/",
+            "name": "https://lore.kernel.org/git/xmqqim6019yd.fsf@gitster.c.googlers.com/",
+            "refsource": "MISC",
+            "tags": [
+              "Release Notes",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://git-scm.com/docs/git-config#Documentation/git-config.txt-coresymlinks",
+            "name": "https://git-scm.com/docs/git-config#Documentation/git-config.txt-coresymlinks",
+            "refsource": "MISC",
+            "tags": [
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "http://www.openwall.com/lists/oss-security/2021/03/09/3",
+            "name": "[oss-security] 20210309 git: malicious repositories can execute remote code while cloning",
+            "refsource": "MLIST",
+            "tags": [
+              "Exploit",
+              "Mailing List",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LCLJJLKKMS5WRFO6C475AOUZTWQLIARX/",
+            "name": "FEDORA-2021-63fcbd126e",
+            "refsource": "FEDORA",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LMXX2POK5X576BSDWSXGU7EIK6I72ERU/",
+            "name": "FEDORA-2021-ffd0b2108d",
+            "refsource": "FEDORA",
+            "tags": [
+              "Mailing List",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BBPNGLQSYJHLZZ37BO42YY6S5OTIF4L4/",
+            "name": "FEDORA-2021-03e61a6647",
+            "refsource": "FEDORA",
+            "tags": [
+              "Mailing List",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://support.apple.com/kb/HT212320",
+            "name": "https://support.apple.com/kb/HT212320",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://seclists.org/fulldisclosure/2021/Apr/60",
+            "name": "20210427 APPLE-SA-2021-04-26-10 Xcode 12.5",
+            "refsource": "FULLDISC",
+            "tags": [
+              "Mailing List",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://security.gentoo.org/glsa/202104-01",
+            "name": "GLSA-202104-01",
+            "refsource": "GENTOO",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://packetstormsecurity.com/files/163978/Git-LFS-Clone-Command-Execution.html",
+            "name": "http://packetstormsecurity.com/files/163978/Git-LFS-Clone-Command-Execution.html",
+            "refsource": "MISC",
+            "tags": [
+              "Exploit",
+              "Third Party Advisory",
+              "VDB Entry"
+            ]
+          },
+          {
+            "url": "https://lists.debian.org/debian-lts-announce/2022/10/msg00014.html",
+            "name": "[debian-lts-announce] 20221010 [SECURITY] [DLA 3145-1] git security update",
+            "refsource": "MLIST",
+            "tags": [
+              "Mailing List",
+              "Third Party Advisory"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "Git is an open-source distributed revision control system. In affected versions of Git a specially crafted repository that contains symbolic links as well as files using a clean/smudge filter such as Git LFS, may cause just-checked out script to be executed while cloning onto a case-insensitive file system such as NTFS, HFS+ or APFS (i.e. the default file systems on Windows and macOS). Note that clean/smudge filters have to be configured for that. Git for Windows configures Git LFS by default, and is therefore vulnerable. The problem has been patched in the versions published on Tuesday, March 9th, 2021. As a workaound, if symbolic link support is disabled in Git (e.g. via `git config --global core.symlinks false`), the described attack won't work. Likewise, if no clean/smudge filters such as Git LFS are configured globally (i.e. _before_ cloning), the attack is foiled. As always, it is best to avoid cloning repositories from untrusted sources. The earliest impacted version is 2.14.2. The fix versions are: 2.30.1, 2.29.3, 2.28.1, 2.27.1, 2.26.3, 2.25.5, 2.24.4, 2.23.4, 2.22.5, 2.21.4, 2.20.5, 2.19.6, 2.18.5, 2.17.62.17.6."
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "OR",
+          "children": [],
+          "cpe_match": [
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:git-scm:git:*:*:*:*:*:*:*:*",
+              "versionEndIncluding": "2.14.2",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:git-scm:git:*:*:*:*:*:*:*:*",
+              "versionStartIncluding": "2.25.0",
+              "versionEndExcluding": "2.25.5",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:git-scm:git:*:*:*:*:*:*:*:*",
+              "versionStartIncluding": "2.24.0",
+              "versionEndExcluding": "2.24.4",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:git-scm:git:*:*:*:*:*:*:*:*",
+              "versionStartIncluding": "2.23.0",
+              "versionEndExcluding": "2.23.4",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:git-scm:git:*:*:*:*:*:*:*:*",
+              "versionStartIncluding": "2.22.0",
+              "versionEndExcluding": "2.22.5",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:git-scm:git:*:*:*:*:*:*:*:*",
+              "versionStartIncluding": "2.21.0",
+              "versionEndExcluding": "2.21.4",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:git-scm:git:*:*:*:*:*:*:*:*",
+              "versionStartIncluding": "2.20.0",
+              "versionEndExcluding": "2.20.5",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:git-scm:git:*:*:*:*:*:*:*:*",
+              "versionStartIncluding": "2.19.0",
+              "versionEndExcluding": "2.19.6",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:git-scm:git:*:*:*:*:*:*:*:*",
+              "versionStartIncluding": "2.18.0",
+              "versionEndExcluding": "2.18.5",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:git-scm:git:*:*:*:*:*:*:*:*",
+              "versionStartIncluding": "2.17.0",
+              "versionEndExcluding": "2.17.6",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:git-scm:git:*:*:*:*:*:*:*:*",
+              "versionStartIncluding": "2.26.0",
+              "versionEndExcluding": "2.26.3",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:git-scm:git:*:*:*:*:*:*:*:*",
+              "versionStartIncluding": "2.29.0",
+              "versionEndExcluding": "2.29.3",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:git-scm:git:*:*:*:*:*:*:*:*",
+              "versionStartIncluding": "2.30.0",
+              "versionEndExcluding": "2.30.2",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:git-scm:git:2.27.0:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:git-scm:git:2.28.0:*:*:*:*:*:*:*",
+              "cpe_name": []
+            }
+          ]
+        },
+        {
+          "operator": "OR",
+          "children": [],
+          "cpe_match": [
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*",
+              "cpe_name": []
+            }
+          ]
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:apple:xcode:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "12.5",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:apple:macos:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "11.0",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "OR",
+          "children": [],
+          "cpe_match": [
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+              "cpe_name": []
+            }
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          "attackVector": "NETWORK",
+          "attackComplexity": "HIGH",
+          "privilegesRequired": "NONE",
+          "userInteraction": "REQUIRED",
+          "scope": "UNCHANGED",
+          "confidentialityImpact": "HIGH",
+          "integrityImpact": "HIGH",
+          "availabilityImpact": "HIGH",
+          "baseScore": 7.5,
+          "baseSeverity": "HIGH"
+        },
+        "exploitabilityScore": 1.6,
+        "impactScore": 5.9
+      },
+      "baseMetricV2": {
+        "cvssV2": {
+          "version": "2.0",
+          "vectorString": "AV:N/AC:H/Au:N/C:P/I:P/A:P",
+          "accessVector": "NETWORK",
+          "accessComplexity": "HIGH",
+          "authentication": "NONE",
+          "confidentialityImpact": "PARTIAL",
+          "integrityImpact": "PARTIAL",
+          "availabilityImpact": "PARTIAL",
+          "baseScore": 5.1
+        },
+        "severity": "MEDIUM",
+        "exploitabilityScore": 4.9,
+        "impactScore": 6.4,
+        "acInsufInfo": false,
+        "obtainAllPrivilege": false,
+        "obtainUserPrivilege": false,
+        "obtainOtherPrivilege": false,
+        "userInteractionRequired": true
+      }
+    },
+    "publishedDate": "2021-03-09T20:15Z",
+    "lastModifiedDate": "2022-12-06T21:38Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2022-37017",
+        "ASSIGNER": "secure@symantec.com"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-863"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/21014",
+            "name": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/21014",
+            "refsource": "MISC",
+            "tags": [
+              "Permissions Required",
+              "Vendor Advisory"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "Symantec Endpoint Protection (Windows) agent, prior to 14.3 RU6/14.3 RU5 Patch 1, may be susceptible to a Security Control Bypass vulnerability, which is a type of issue that can potentially allow a threat actor to circumvent existing security controls. This CVE applies narrowly to the Client User Interface Password protection and Policy Import/Export Password protection, if it has been enabled."
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "OR",
+          "children": [],
+          "cpe_match": [
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:broadcom:symantec_endpoint_protection:*:*:*:*:*:windows:*:*",
+              "versionEndExcluding": "14.3.5.1",
+              "cpe_name": []
+            }
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+          "attackVector": "NETWORK",
+          "attackComplexity": "LOW",
+          "privilegesRequired": "NONE",
+          "userInteraction": "NONE",
+          "scope": "UNCHANGED",
+          "confidentialityImpact": "NONE",
+          "integrityImpact": "HIGH",
+          "availabilityImpact": "NONE",
+          "baseScore": 7.5,
+          "baseSeverity": "HIGH"
+        },
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+      }
+    },
+    "publishedDate": "2022-12-01T14:15Z",
+    "lastModifiedDate": "2022-12-05T18:42Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2022-37016",
+        "ASSIGNER": "secure@symantec.com"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-269"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/21014",
+            "name": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/21014",
+            "refsource": "MISC",
+            "tags": [
+              "Permissions Required",
+              "Vendor Advisory"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "Symantec Endpoint Protection (Windows) agent may be susceptible to a Privilege Escalation vulnerability, which is a type of issue whereby an attacker may attempt to compromise the software application to gain elevated access to resources that are normally protected from an application or user."
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "OR",
+          "children": [],
+          "cpe_match": [
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:broadcom:symantec_endpoint_protection:*:*:*:*:*:windows:*:*",
+              "versionEndIncluding": "14.3.5",
+              "cpe_name": []
+            }
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "attackVector": "NETWORK",
+          "attackComplexity": "LOW",
+          "privilegesRequired": "NONE",
+          "userInteraction": "NONE",
+          "scope": "UNCHANGED",
+          "confidentialityImpact": "HIGH",
+          "integrityImpact": "HIGH",
+          "availabilityImpact": "HIGH",
+          "baseScore": 9.8,
+          "baseSeverity": "CRITICAL"
+        },
+        "exploitabilityScore": 3.9,
+        "impactScore": 5.9
+      }
+    },
+    "publishedDate": "2022-12-01T14:15Z",
+    "lastModifiedDate": "2022-12-05T18:36Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2019-4014",
+        "ASSIGNER": "psirt@us.ibm.com"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-120"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://www.ibm.com/support/docview.wss?uid=ibm10878793",
+            "name": "https://www.ibm.com/support/docview.wss?uid=ibm10878793",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Patch",
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/155892",
+            "name": "ibm-db2-cve20194014-bo (155892)",
+            "refsource": "XF",
+            "tags": [
+              "VDB Entry",
+              "Vendor Advisory"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "IBM DB2 for Linux, UNIX and Windows (includes DB2 Connect Server) 9.7, 10.1, 10.5, and 11.1 is vulnerable to a buffer overflow, which could allow an authenticated local attacker to execute arbitrary code on the system as root. IBM X-Force ID: 155892."
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.1.0.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.11:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:11.1.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.1.0.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.1.0.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.9:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.1.0.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.1.0.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:11.1.1.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:11.1.2.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:11.1.3.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:11.1.4.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5.0.9:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.1.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.1.0.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "attackVector": "LOCAL",
+          "attackComplexity": "LOW",
+          "privilegesRequired": "LOW",
+          "userInteraction": "NONE",
+          "scope": "UNCHANGED",
+          "confidentialityImpact": "HIGH",
+          "integrityImpact": "HIGH",
+          "availabilityImpact": "HIGH",
+          "baseScore": 7.8,
+          "baseSeverity": "HIGH"
+        },
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.9
+      },
+      "baseMetricV2": {
+        "cvssV2": {
+          "version": "2.0",
+          "vectorString": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+          "accessVector": "LOCAL",
+          "accessComplexity": "LOW",
+          "authentication": "NONE",
+          "confidentialityImpact": "COMPLETE",
+          "integrityImpact": "COMPLETE",
+          "availabilityImpact": "COMPLETE",
+          "baseScore": 7.2
+        },
+        "severity": "HIGH",
+        "exploitabilityScore": 3.9,
+        "impactScore": 10.0,
+        "acInsufInfo": false,
+        "obtainAllPrivilege": false,
+        "obtainUserPrivilege": false,
+        "obtainOtherPrivilege": false,
+        "userInteractionRequired": false
+      }
+    },
+    "publishedDate": "2019-04-03T14:29Z",
+    "lastModifiedDate": "2022-12-03T15:10Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2019-4016",
+        "ASSIGNER": "psirt@us.ibm.com"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-120"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://www.ibm.com/support/docview.wss?uid=ibm10740413",
+            "name": "https://www.ibm.com/support/docview.wss?uid=ibm10740413",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Patch",
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/155894",
+            "name": "ibm-db2-cve20194016-bo(155894)",
+            "refsource": "XF",
+            "tags": [
+              "Vendor Advisory",
+              "VDB Entry"
+            ]
+          },
+          {
+            "url": "http://www.securityfocus.com/bid/107398",
+            "name": "107398",
+            "refsource": "BID",
+            "tags": [
+              "Third Party Advisory",
+              "VDB Entry"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "IBM DB2 for Linux, UNIX and Windows (includes DB2 Connect Server) 9.7, 10.1, 10.5, and 11.1 is vulnerable to a buffer overflow, which could allow an authenticated local attacker to execute arbitrary code on the system as root. IBM X-ForceID: 155894."
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:11.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:11.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "attackVector": "LOCAL",
+          "attackComplexity": "LOW",
+          "privilegesRequired": "LOW",
+          "userInteraction": "NONE",
+          "scope": "UNCHANGED",
+          "confidentialityImpact": "HIGH",
+          "integrityImpact": "HIGH",
+          "availabilityImpact": "HIGH",
+          "baseScore": 7.8,
+          "baseSeverity": "HIGH"
+        },
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.9
+      },
+      "baseMetricV2": {
+        "cvssV2": {
+          "version": "2.0",
+          "vectorString": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+          "accessVector": "LOCAL",
+          "accessComplexity": "LOW",
+          "authentication": "NONE",
+          "confidentialityImpact": "COMPLETE",
+          "integrityImpact": "COMPLETE",
+          "availabilityImpact": "COMPLETE",
+          "baseScore": 7.2
+        },
+        "severity": "HIGH",
+        "exploitabilityScore": 3.9,
+        "impactScore": 10.0,
+        "acInsufInfo": false,
+        "obtainAllPrivilege": false,
+        "obtainUserPrivilege": false,
+        "obtainOtherPrivilege": false,
+        "userInteractionRequired": false
+      }
+    },
+    "publishedDate": "2019-03-11T22:29Z",
+    "lastModifiedDate": "2022-12-03T15:10Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2019-4015",
+        "ASSIGNER": "psirt@us.ibm.com"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-120"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://www.ibm.com/support/docview.wss?uid=ibm10740413",
+            "name": "https://www.ibm.com/support/docview.wss?uid=ibm10740413",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Patch",
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/155893",
+            "name": "ibm-db2-cve20194015-bo(155893)",
+            "refsource": "XF",
+            "tags": [
+              "VDB Entry",
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "http://www.securityfocus.com/bid/107398",
+            "name": "107398",
+            "refsource": "BID",
+            "tags": [
+              "Third Party Advisory",
+              "VDB Entry"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "IBM DB2 for Linux, UNIX and Windows (includes DB2 Connect Server) 9.7, 10.1, 10.5, and 11.1 is vulnerable to a buffer overflow, which could allow an authenticated local attacker to execute arbitrary code on the system as root. IBM X-ForceID: 155893."
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:11.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:11.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:9.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ibm:db2:10.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "attackVector": "LOCAL",
+          "attackComplexity": "LOW",
+          "privilegesRequired": "LOW",
+          "userInteraction": "NONE",
+          "scope": "UNCHANGED",
+          "confidentialityImpact": "HIGH",
+          "integrityImpact": "HIGH",
+          "availabilityImpact": "HIGH",
+          "baseScore": 7.8,
+          "baseSeverity": "HIGH"
+        },
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.9
+      },
+      "baseMetricV2": {
+        "cvssV2": {
+          "version": "2.0",
+          "vectorString": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+          "accessVector": "LOCAL",
+          "accessComplexity": "LOW",
+          "authentication": "NONE",
+          "confidentialityImpact": "COMPLETE",
+          "integrityImpact": "COMPLETE",
+          "availabilityImpact": "COMPLETE",
+          "baseScore": 7.2
+        },
+        "severity": "HIGH",
+        "exploitabilityScore": 3.9,
+        "impactScore": 10.0,
+        "acInsufInfo": false,
+        "obtainAllPrivilege": false,
+        "obtainUserPrivilege": false,
+        "obtainOtherPrivilege": false,
+        "userInteractionRequired": false
+      }
+    },
+    "publishedDate": "2019-03-11T22:29Z",
+    "lastModifiedDate": "2022-12-03T15:10Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2021-31693",
+        "ASSIGNER": "cve@mitre.org"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "NVD-CWE-noinfo"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://www.vmware.com/security/advisories/VMSA-2022-0029.html",
+            "name": "https://www.vmware.com/security/advisories/VMSA-2022-0029.html",
+            "refsource": "MISC",
+            "tags": [
+              "Vendor Advisory"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "VMware Tools for Windows (12.x.y prior to 12.1.5, 11.x.y and 10.x.y) contains a denial-of-service vulnerability in the VM3DMP driver. A malicious actor with local user privileges in the Windows guest OS, where VMware Tools is installed, can trigger a PANIC in the VM3DMP driver leading to a denial-of-service condition in the Windows guest OS."
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "OR",
+          "children": [],
+          "cpe_match": [
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:vmware:tools:*:*:*:*:windows:*:*:*",
+              "versionStartIncluding": "10.0.0",
+              "versionEndExcluding": "12.1.5",
+              "cpe_name": []
+            }
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+          "attackVector": "LOCAL",
+          "attackComplexity": "LOW",
+          "privilegesRequired": "LOW",
+          "userInteraction": "NONE",
+          "scope": "CHANGED",
+          "confidentialityImpact": "NONE",
+          "integrityImpact": "NONE",
+          "availabilityImpact": "HIGH",
+          "baseScore": 6.5,
+          "baseSeverity": "MEDIUM"
+        },
+        "exploitabilityScore": 2.0,
+        "impactScore": 4.0
+      }
+    },
+    "publishedDate": "2022-11-29T21:15Z",
+    "lastModifiedDate": "2022-12-02T16:53Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2022-3859",
+        "ASSIGNER": "trellixpsirt@trellix.com"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-427"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://kcm.trellix.com/corporate/index?page=content&id=SB10391",
+            "name": "https://kcm.trellix.com/corporate/index?page=content&id=SB10391",
+            "refsource": "MISC",
+            "tags": [
+              "Patch",
+              "Vendor Advisory"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "An uncontrolled search path vulnerability exists in Trellix Agent (TA) for Windows in versions prior to 5.7.8. This allows an attacker with admin access, which is required to place the DLL in the restricted Windows System folder, to elevate their privileges to System by placing a malicious DLL there."
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "OR",
+          "children": [],
+          "cpe_match": [
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:trellix:agent:*:*:*:*:windows:*:*:*",
+              "versionEndExcluding": "5.7.8",
+              "cpe_name": []
+            }
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+          "attackVector": "LOCAL",
+          "attackComplexity": "LOW",
+          "privilegesRequired": "HIGH",
+          "userInteraction": "NONE",
+          "scope": "UNCHANGED",
+          "confidentialityImpact": "HIGH",
+          "integrityImpact": "HIGH",
+          "availabilityImpact": "HIGH",
+          "baseScore": 6.7,
+          "baseSeverity": "MEDIUM"
+        },
+        "exploitabilityScore": 0.8,
+        "impactScore": 5.9
+      }
+    },
+    "publishedDate": "2022-11-30T09:15Z",
+    "lastModifiedDate": "2022-12-02T13:53Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2022-4187",
+        "ASSIGNER": "chrome-cve-admin@google.com"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "NVD-CWE-noinfo"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://crbug.com/1381217",
+            "name": "https://crbug.com/1381217",
+            "refsource": "MISC",
+            "tags": [
+              "Issue Tracking",
+              "Permissions Required"
+            ]
+          },
+          {
+            "url": "https://chromereleases.googleblog.com/2022/11/stable-channel-update-for-desktop_29.html",
+            "name": "https://chromereleases.googleblog.com/2022/11/stable-channel-update-for-desktop_29.html",
+            "refsource": "MISC",
+            "tags": [
+              "Release Notes",
+              "Vendor Advisory"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "Insufficient policy enforcement in DevTools in Google Chrome on Windows prior to 108.0.5359.71 allowed a remote attacker to bypass filesystem restrictions via a crafted HTML page. (Chromium security severity: Medium)"
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:google:chrome:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "108.0.5359.71",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+          "attackVector": "NETWORK",
+          "attackComplexity": "LOW",
+          "privilegesRequired": "NONE",
+          "userInteraction": "REQUIRED",
+          "scope": "UNCHANGED",
+          "confidentialityImpact": "NONE",
+          "integrityImpact": "HIGH",
+          "availabilityImpact": "NONE",
+          "baseScore": 6.5,
+          "baseSeverity": "MEDIUM"
+        },
+        "exploitabilityScore": 2.8,
+        "impactScore": 3.6
+      }
+    },
+    "publishedDate": "2022-11-30T00:15Z",
+    "lastModifiedDate": "2022-12-01T23:31Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2022-41954",
+        "ASSIGNER": "security-advisories@github.com"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-200"
+              },
+              {
+                "lang": "en",
+                "value": "CWE-377"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://github.com/joniles/mpxj/security/advisories/GHSA-jf2p-4gqj-849g",
+            "name": "https://github.com/joniles/mpxj/security/advisories/GHSA-jf2p-4gqj-849g",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://github.com/joniles/mpxj/commit/287ad0234213c52b0638565e14bd9cf3ed44cedd",
+            "name": "https://github.com/joniles/mpxj/commit/287ad0234213c52b0638565e14bd9cf3ed44cedd",
+            "refsource": "MISC",
+            "tags": [
+              "Patch",
+              "Third Party Advisory"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "MPXJ is an open source library to read and write project plans from a variety of file formats and databases. On Unix-like operating systems (not Windows or macos), MPXJ's use of `File.createTempFile(..)` results in temporary files being created with the permissions `-rw-r--r--`. This means that any other user on the system can read the contents of this file. When MPXJ is reading a schedule file which requires the creation of a temporary file or directory, a knowledgeable local user could locate these transient files while they are in use and would then be able to read the schedule being processed by MPXJ. The problem has been patched, MPXJ version 10.14.1 and later includes the necessary changes. Users unable to upgrade may set `java.io.tmpdir` to a directory to which only the user running the application has access will prevent other users from accessing these temporary files."
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "OR",
+          "children": [],
+          "cpe_match": [
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:mpxj:mpxj:*:*:*:*:*:*:*:*",
+              "versionEndExcluding": "10.14.1",
+              "cpe_name": []
+            }
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+          "attackVector": "LOCAL",
+          "attackComplexity": "LOW",
+          "privilegesRequired": "LOW",
+          "userInteraction": "NONE",
+          "scope": "UNCHANGED",
+          "confidentialityImpact": "LOW",
+          "integrityImpact": "NONE",
+          "availabilityImpact": "NONE",
+          "baseScore": 3.3,
+          "baseSeverity": "LOW"
+        },
+        "exploitabilityScore": 1.8,
+        "impactScore": 1.4
+      }
+    },
+    "publishedDate": "2022-11-25T19:15Z",
+    "lastModifiedDate": "2022-12-01T17:28Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2011-3389",
+        "ASSIGNER": "cve@mitre.org"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-326"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "http://www.opera.com/docs/changelogs/unix/1151/",
+            "name": "http://www.opera.com/docs/changelogs/unix/1151/",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://www.securityfocus.com/bid/49388",
+            "name": "49388",
+            "refsource": "BID",
+            "tags": [
+              "Third Party Advisory",
+              "VDB Entry"
+            ]
+          },
+          {
+            "url": "http://www.opera.com/docs/changelogs/windows/1151/",
+            "name": "http://www.opera.com/docs/changelogs/windows/1151/",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://www.opera.com/docs/changelogs/mac/1151/",
+            "name": "http://www.opera.com/docs/changelogs/mac/1151/",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://osvdb.org/74829",
+            "name": "74829",
+            "refsource": "OSVDB",
+            "tags": [
+              "Broken Link"
+            ]
+          },
+          {
+            "url": "http://secunia.com/advisories/45791",
+            "name": "45791",
+            "refsource": "SECUNIA",
+            "tags": [
+              "Not Applicable"
+            ]
+          },
+          {
+            "url": "http://www.securitytracker.com/id?1025997",
+            "name": "1025997",
+            "refsource": "SECTRACK",
+            "tags": [
+              "Broken Link",
+              "Third Party Advisory",
+              "VDB Entry"
+            ]
+          },
+          {
+            "url": "http://eprint.iacr.org/2004/111",
+            "name": "http://eprint.iacr.org/2004/111",
+            "refsource": "MISC",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=737506",
+            "name": "https://bugzilla.redhat.com/show_bug.cgi?id=737506",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Issue Tracking",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://ekoparty.org/2011/juliano-rizzo.php",
+            "name": "http://ekoparty.org/2011/juliano-rizzo.php",
+            "refsource": "MISC",
+            "tags": [
+              "Broken Link"
+            ]
+          },
+          {
+            "url": "http://www.imperialviolet.org/2011/09/23/chromeandbeast.html",
+            "name": "http://www.imperialviolet.org/2011/09/23/chromeandbeast.html",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://bugzilla.novell.com/show_bug.cgi?id=719047",
+            "name": "https://bugzilla.novell.com/show_bug.cgi?id=719047",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Issue Tracking",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://www.insecure.cl/Beast-SSL.rar",
+            "name": "http://www.insecure.cl/Beast-SSL.rar",
+            "refsource": "MISC",
+            "tags": [
+              "Broken Link",
+              "Patch"
+            ]
+          },
+          {
+            "url": "http://www.educatedguesswork.org/2011/09/security_impact_of_the_rizzodu.html",
+            "name": "http://www.educatedguesswork.org/2011/09/security_impact_of_the_rizzodu.html",
+            "refsource": "MISC",
+            "tags": [
+              "Broken Link"
+            ]
+          },
+          {
+            "url": "http://eprint.iacr.org/2006/136",
+            "name": "http://eprint.iacr.org/2006/136",
+            "refsource": "MISC",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://isc.sans.edu/diary/SSL+TLS+part+3+/11635",
+            "name": "http://isc.sans.edu/diary/SSL+TLS+part+3+/11635",
+            "refsource": "MISC",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://my.opera.com/securitygroup/blog/2011/09/28/the-beast-ssl-tls-issue",
+            "name": "http://my.opera.com/securitygroup/blog/2011/09/28/the-beast-ssl-tls-issue",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://blog.mozilla.com/security/2011/09/27/attack-against-tls-protected-communications/",
+            "name": "http://blog.mozilla.com/security/2011/09/27/attack-against-tls-protected-communications/",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://blogs.technet.com/b/msrc/archive/2011/09/26/microsoft-releases-security-advisory-2588513.aspx",
+            "name": "http://blogs.technet.com/b/msrc/archive/2011/09/26/microsoft-releases-security-advisory-2588513.aspx",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://technet.microsoft.com/security/advisory/2588513",
+            "name": "http://technet.microsoft.com/security/advisory/2588513",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Patch",
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "http://support.apple.com/kb/HT4999",
+            "name": "http://support.apple.com/kb/HT4999",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://www.oracle.com/technetwork/topics/security/javacpuoct2011-443431.html",
+            "name": "http://www.oracle.com/technetwork/topics/security/javacpuoct2011-443431.html",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://support.apple.com/kb/HT5001",
+            "name": "http://support.apple.com/kb/HT5001",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://lists.apple.com/archives/Security-announce/2011//Oct/msg00001.html",
+            "name": "APPLE-SA-2011-10-12-1",
+            "refsource": "APPLE",
+            "tags": [
+              "Broken Link"
+            ]
+          },
+          {
+            "url": "http://lists.apple.com/archives/Security-announce/2011//Oct/msg00002.html",
+            "name": "APPLE-SA-2011-10-12-2",
+            "refsource": "APPLE",
+            "tags": [
+              "Broken Link"
+            ]
+          },
+          {
+            "url": "http://www.securitytracker.com/id?1026103",
+            "name": "1026103",
+            "refsource": "SECTRACK",
+            "tags": [
+              "Broken Link",
+              "Third Party Advisory",
+              "VDB Entry"
+            ]
+          },
+          {
+            "url": "http://www.securityfocus.com/bid/49778",
+            "name": "49778",
+            "refsource": "BID",
+            "tags": [
+              "Third Party Advisory",
+              "VDB Entry"
+            ]
+          },
+          {
+            "url": "http://blogs.technet.com/b/srd/archive/2011/09/26/is-ssl-broken-more-about-security-advisory-2588513.aspx",
+            "name": "http://blogs.technet.com/b/srd/archive/2011/09/26/is-ssl-broken-more-about-security-advisory-2588513.aspx",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://www.redhat.com/support/errata/RHSA-2011-1384.html",
+            "name": "RHSA-2011:1384",
+            "refsource": "REDHAT",
+            "tags": [
+              "Third Party Advisory",
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "http://vnhacker.blogspot.com/2011/09/beast.html",
+            "name": "http://vnhacker.blogspot.com/2011/09/beast.html",
+            "refsource": "MISC",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://www.kb.cert.org/vuls/id/864643",
+            "name": "VU#864643",
+            "refsource": "CERT-VN",
+            "tags": [
+              "Third Party Advisory",
+              "US Government Resource"
+            ]
+          },
+          {
+            "url": "http://googlechromereleases.blogspot.com/2011/10/chrome-stable-release.html",
+            "name": "http://googlechromereleases.blogspot.com/2011/10/chrome-stable-release.html",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Not Applicable",
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "http://www.ibm.com/developerworks/java/jdk/alerts/",
+            "name": "http://www.ibm.com/developerworks/java/jdk/alerts/",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://www.opera.com/docs/changelogs/windows/1160/",
+            "name": "http://www.opera.com/docs/changelogs/windows/1160/",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://www.opera.com/docs/changelogs/mac/1160/",
+            "name": "http://www.opera.com/docs/changelogs/mac/1160/",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://www.opera.com/support/kb/view/1004/",
+            "name": "http://www.opera.com/support/kb/view/1004/",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory",
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "http://www.opera.com/docs/changelogs/unix/1160/",
+            "name": "http://www.opera.com/docs/changelogs/unix/1160/",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://www.redhat.com/support/errata/RHSA-2012-0006.html",
+            "name": "RHSA-2012:0006",
+            "refsource": "REDHAT",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://support.apple.com/kb/HT5130",
+            "name": "http://support.apple.com/kb/HT5130",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://lists.apple.com/archives/security-announce/2012/Feb/msg00000.html",
+            "name": "APPLE-SA-2012-02-01-1",
+            "refsource": "APPLE",
+            "tags": [
+              "Broken Link",
+              "Mailing List"
+            ]
+          },
+          {
+            "url": "http://marc.info/?l=bugtraq&m=132872385320240&w=2",
+            "name": "SSRT100740",
+            "refsource": "HP",
+            "tags": [
+              "Issue Tracking",
+              "Mailing List",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://support.apple.com/kb/HT5281",
+            "name": "http://support.apple.com/kb/HT5281",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Broken Link"
+            ]
+          },
+          {
+            "url": "http://lists.apple.com/archives/security-announce/2012/May/msg00001.html",
+            "name": "APPLE-SA-2012-05-09-1",
+            "refsource": "APPLE",
+            "tags": [
+              "Broken Link",
+              "Mailing List"
+            ]
+          },
+          {
+            "url": "http://lists.apple.com/archives/security-announce/2012/Jul/msg00001.html",
+            "name": "APPLE-SA-2012-07-25-2",
+            "refsource": "APPLE",
+            "tags": [
+              "Broken Link",
+              "Mailing List"
+            ]
+          },
+          {
+            "url": "http://support.apple.com/kb/HT5501",
+            "name": "http://support.apple.com/kb/HT5501",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://lists.apple.com/archives/security-announce/2012/Sep/msg00004.html",
+            "name": "APPLE-SA-2012-09-19-2",
+            "refsource": "APPLE",
+            "tags": [
+              "Broken Link",
+              "Mailing List"
+            ]
+          },
+          {
+            "url": "http://secunia.com/advisories/49198",
+            "name": "49198",
+            "refsource": "SECUNIA",
+            "tags": [
+              "Not Applicable"
+            ]
+          },
+          {
+            "url": "http://lists.opensuse.org/opensuse-security-announce/2012-01/msg00051.html",
+            "name": "SUSE-SU-2012:0122",
+            "refsource": "SUSE",
+            "tags": [
+              "Broken Link"
+            ]
+          },
+          {
+            "url": "https://hermes.opensuse.org/messages/13155432",
+            "name": "openSUSE-SU-2012:0063",
+            "refsource": "SUSE",
+            "tags": [
+              "Broken Link"
+            ]
+          },
+          {
+            "url": "https://hermes.opensuse.org/messages/13154861",
+            "name": "openSUSE-SU-2012:0030",
+            "refsource": "SUSE",
+            "tags": [
+              "Broken Link"
+            ]
+          },
+          {
+            "url": "http://lists.opensuse.org/opensuse-security-announce/2012-01/msg00049.html",
+            "name": "SUSE-SU-2012:0114",
+            "refsource": "SUSE",
+            "tags": [
+              "Broken Link"
+            ]
+          },
+          {
+            "url": "http://marc.info/?l=bugtraq&m=132750579901589&w=2",
+            "name": "HPSBUX02730",
+            "refsource": "HP",
+            "tags": [
+              "Issue Tracking",
+              "Mailing List",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://secunia.com/advisories/48692",
+            "name": "48692",
+            "refsource": "SECUNIA",
+            "tags": [
+              "Not Applicable"
+            ]
+          },
+          {
+            "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_fetchmail",
+            "name": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_fetchmail",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://secunia.com/advisories/48948",
+            "name": "48948",
+            "refsource": "SECUNIA",
+            "tags": [
+              "Not Applicable"
+            ]
+          },
+          {
+            "url": "http://secunia.com/advisories/48915",
+            "name": "48915",
+            "refsource": "SECUNIA",
+            "tags": [
+              "Not Applicable"
+            ]
+          },
+          {
+            "url": "http://www.us-cert.gov/cas/techalerts/TA12-010A.html",
+            "name": "TA12-010A",
+            "refsource": "CERT",
+            "tags": [
+              "Third Party Advisory",
+              "US Government Resource"
+            ]
+          },
+          {
+            "url": "https://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c03839862",
+            "name": "HPSBMU02900",
+            "refsource": "HP",
+            "tags": [
+              "Broken Link"
+            ]
+          },
+          {
+            "url": "http://secunia.com/advisories/55351",
+            "name": "55351",
+            "refsource": "SECUNIA",
+            "tags": [
+              "Not Applicable"
+            ]
+          },
+          {
+            "url": "http://secunia.com/advisories/55322",
+            "name": "55322",
+            "refsource": "SECUNIA",
+            "tags": [
+              "Not Applicable"
+            ]
+          },
+          {
+            "url": "http://secunia.com/advisories/55350",
+            "name": "55350",
+            "refsource": "SECUNIA",
+            "tags": [
+              "Not Applicable"
+            ]
+          },
+          {
+            "url": "http://www.securitytracker.com/id/1029190",
+            "name": "1029190",
+            "refsource": "SECTRACK",
+            "tags": [
+              "Broken Link",
+              "Third Party Advisory",
+              "VDB Entry"
+            ]
+          },
+          {
+            "url": "http://rhn.redhat.com/errata/RHSA-2013-1455.html",
+            "name": "RHSA-2013:1455",
+            "refsource": "REDHAT",
+            "tags": [
+              "Broken Link"
+            ]
+          },
+          {
+            "url": "http://lists.apple.com/archives/security-announce/2013/Oct/msg00004.html",
+            "name": "APPLE-SA-2013-10-22-3",
+            "refsource": "APPLE",
+            "tags": [
+              "Broken Link",
+              "Mailing List"
+            ]
+          },
+          {
+            "url": "http://www.ubuntu.com/usn/USN-1263-1",
+            "name": "USN-1263-1",
+            "refsource": "UBUNTU",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://support.apple.com/kb/HT6150",
+            "name": "http://support.apple.com/kb/HT6150",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://security.gentoo.org/glsa/glsa-201406-32.xml",
+            "name": "GLSA-201406-32",
+            "refsource": "GENTOO",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://www.oracle.com/technetwork/topics/security/cpujan2015-1972971.html",
+            "name": "http://www.oracle.com/technetwork/topics/security/cpujan2015-1972971.html",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://www.oracle.com/technetwork/topics/security/cpujul2015-2367936.html",
+            "name": "http://www.oracle.com/technetwork/topics/security/cpujul2015-2367936.html",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://downloads.asterisk.org/pub/security/AST-2016-001.html",
+            "name": "http://downloads.asterisk.org/pub/security/AST-2016-001.html",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://marc.info/?l=bugtraq&m=134254957702612&w=2",
+            "name": "SSRT100867",
+            "refsource": "HP",
+            "tags": [
+              "Issue Tracking",
+              "Mailing List",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://marc.info/?l=bugtraq&m=133365109612558&w=2",
+            "name": "SSRT100805",
+            "refsource": "HP",
+            "tags": [
+              "Issue Tracking",
+              "Mailing List",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://marc.info/?l=bugtraq&m=133728004526190&w=2",
+            "name": "HPSBUX02777",
+            "refsource": "HP",
+            "tags": [
+              "Issue Tracking",
+              "Mailing List",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://www.apcmedia.com/salestools/SJHN-7RKGNM/SJHN-7RKGNM_R4_EN.pdf",
+            "name": "http://www.apcmedia.com/salestools/SJHN-7RKGNM/SJHN-7RKGNM_R4_EN.pdf",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A14752",
+            "name": "oval:org.mitre.oval:def:14752",
+            "refsource": "OVAL",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://marc.info/?l=bugtraq&m=134254866602253&w=2",
+            "name": "HPSBMU02799",
+            "refsource": "HP",
+            "tags": [
+              "Issue Tracking",
+              "Mailing List",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2012:058",
+            "name": "MDVSA-2012:058",
+            "refsource": "MANDRIVA",
+            "tags": [
+              "Broken Link"
+            ]
+          },
+          {
+            "url": "http://rhn.redhat.com/errata/RHSA-2012-0508.html",
+            "name": "RHSA-2012:0508",
+            "refsource": "REDHAT",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://lists.opensuse.org/opensuse-security-announce/2012-05/msg00009.html",
+            "name": "SUSE-SU-2012:0602",
+            "refsource": "SUSE",
+            "tags": [
+              "Broken Link"
+            ]
+          },
+          {
+            "url": "http://security.gentoo.org/glsa/glsa-201203-02.xml",
+            "name": "GLSA-201203-02",
+            "refsource": "GENTOO",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://secunia.com/advisories/48256",
+            "name": "48256",
+            "refsource": "SECUNIA",
+            "tags": [
+              "Not Applicable"
+            ]
+          },
+          {
+            "url": "http://www.securitytracker.com/id?1026704",
+            "name": "1026704",
+            "refsource": "SECTRACK",
+            "tags": [
+              "Broken Link",
+              "Third Party Advisory",
+              "VDB Entry"
+            ]
+          },
+          {
+            "url": "http://secunia.com/advisories/47998",
+            "name": "47998",
+            "refsource": "SECUNIA",
+            "tags": [
+              "Not Applicable"
+            ]
+          },
+          {
+            "url": "http://www.debian.org/security/2012/dsa-2398",
+            "name": "DSA-2398",
+            "refsource": "DEBIAN",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://curl.haxx.se/docs/adv_20120124B.html",
+            "name": "http://curl.haxx.se/docs/adv_20120124B.html",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://ics-cert.us-cert.gov/advisories/ICSMA-18-058-02",
+            "name": "https://ics-cert.us-cert.gov/advisories/ICSMA-18-058-02",
+            "refsource": "MISC",
+            "tags": [
+              "Third Party Advisory",
+              "US Government Resource"
+            ]
+          },
+          {
+            "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2012/ms12-006",
+            "name": "MS12-006",
+            "refsource": "MS",
+            "tags": [
+              "Patch",
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-556833.pdf",
+            "name": "https://cert-portal.siemens.com/productcert/pdf/ssa-556833.pdf",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://lists.opensuse.org/opensuse-security-announce/2020-01/msg00040.html",
+            "name": "openSUSE-SU-2020:0086",
+            "refsource": "SUSE",
+            "tags": [
+              "Broken Link"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "The SSL protocol, as used in certain configurations in Microsoft Windows and Microsoft Internet Explorer, Mozilla Firefox, Google Chrome, Opera, and other products, encrypts data by using CBC mode with chained initialization vectors, which allows man-in-the-middle attackers to obtain plaintext HTTP headers via a blockwise chosen-boundary attack (BCBA) on an HTTPS session, in conjunction with JavaScript code that uses (1) the HTML5 WebSocket API, (2) the Java URLConnection API, or (3) the Silverlight WebClient API, aka a \"BEAST\" attack."
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "OR",
+          "children": [],
+          "cpe_match": [
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:opera:opera_browser:-:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:microsoft:internet_explorer:-:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:google:chrome:-:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:mozilla:firefox:-:*:*:*:*:*:*:*",
+              "cpe_name": []
+            }
+          ]
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:siemens:simatic_rf68xr_firmware:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "3.2.1",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:h:siemens:simatic_rf68xr:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:siemens:simatic_rf615r_firmware:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "3.2.1",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:h:siemens:simatic_rf615r:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "OR",
+          "children": [],
+          "cpe_match": [
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:haxx:curl:*:*:*:*:*:*:*:*",
+              "versionStartIncluding": "7.10.6",
+              "versionEndIncluding": "7.23.1",
+              "cpe_name": []
+            }
+          ]
+        },
+        {
+          "operator": "OR",
+          "children": [],
+          "cpe_match": [
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server:5.0:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server_aus:6.2:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_workstation:5.0:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_desktop:5.0:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_eus:6.2:*:*:*:*:*:*:*",
+              "cpe_name": []
+            }
+          ]
+        },
+        {
+          "operator": "OR",
+          "children": [],
+          "cpe_match": [
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:debian:debian_linux:5.0:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:debian:debian_linux:6.0:*:*:*:*:*:*:*",
+              "cpe_name": []
+            }
+          ]
+        },
+        {
+          "operator": "OR",
+          "children": [],
+          "cpe_match": [
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:10.10:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:11.04:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:11.10:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:10.04:*:*:*:-:*:*:*",
+              "cpe_name": []
+            }
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV2": {
+        "cvssV2": {
+          "version": "2.0",
+          "vectorString": "AV:N/AC:M/Au:N/C:P/I:N/A:N",
+          "accessVector": "NETWORK",
+          "accessComplexity": "MEDIUM",
+          "authentication": "NONE",
+          "confidentialityImpact": "PARTIAL",
+          "integrityImpact": "NONE",
+          "availabilityImpact": "NONE",
+          "baseScore": 4.3
+        },
+        "severity": "MEDIUM",
+        "exploitabilityScore": 8.6,
+        "impactScore": 2.9,
+        "obtainAllPrivilege": false,
+        "obtainUserPrivilege": false,
+        "obtainOtherPrivilege": false,
+        "userInteractionRequired": false
+      }
+    },
+    "publishedDate": "2011-09-06T19:55Z",
+    "lastModifiedDate": "2022-11-29T15:56Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2022-31610",
+        "ASSIGNER": "psirt@nvidia.com"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-787"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5383",
+            "name": "https://nvidia.custhelp.com/app/answers/detail/a_id/5383",
+            "refsource": "MISC",
+            "tags": [
+              "Patch",
+              "Vendor Advisory"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "NVIDIA GPU Display Driver for Windows contains a vulnerability in the kernel mode layer (nvlddmkm.sys), where a local user with basic capabilities can cause an out-of-bounds write, which may lead to code execution, denial of service, escalation of privileges, information disclosure, or data tampering."
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:nvidia:gpu_display_driver:*:*:*:*:*:windows:*:*",
+                  "versionStartIncluding": "516.25",
+                  "versionEndExcluding": "516.94",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:nvidia:gpu_display_driver:*:*:*:*:*:windows:*:*",
+                  "versionStartIncluding": "471.11",
+                  "versionEndExcluding": "473.81",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:h:nvidia:geforce:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:nvidia:virtual_gpu:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "13.0",
+                  "versionEndExcluding": "13.3",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:nvidia:virtual_gpu:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "11.0",
+                  "versionEndExcluding": "11.8",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:nvidia:virtual_gpu:14.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:nvidia:cloud_gaming_guest:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "516.94",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:nvidia:gpu_display_driver:*:*:*:*:*:windows:*:*",
+                  "versionStartIncluding": "516.25",
+                  "versionEndExcluding": "516.94",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:nvidia:studio:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:nvidia:gpu_display_driver:*:*:*:*:*:windows:*:*",
+                  "versionStartIncluding": "516.25",
+                  "versionEndExcluding": "516.94",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:nvidia:gpu_display_driver:*:*:*:*:*:windows:*:*",
+                  "versionStartIncluding": "471.11",
+                  "versionEndExcluding": "473.81",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:nvidia:gpu_display_driver:*:*:*:*:*:windows:*:*",
+                  "versionStartIncluding": "511.09",
+                  "versionEndExcluding": "513.46",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:nvidia:studio:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:nvidia:gpu_display_driver:*:*:*:*:*:windows:*:*",
+                  "versionStartIncluding": "516.25",
+                  "versionEndExcluding": "516.94",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:nvidia:gpu_display_driver:*:*:*:*:*:windows:*:*",
+                  "versionStartIncluding": "511.09",
+                  "versionEndExcluding": "513.46",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:nvidia:gpu_display_driver:*:*:*:*:*:windows:*:*",
+                  "versionStartIncluding": "451.48",
+                  "versionEndExcluding": "453.64",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:nvidia:gpu_display_driver:*:*:*:*:*:windows:*:*",
+                  "versionStartIncluding": "471.11",
+                  "versionEndExcluding": "472.81",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:h:nvidia:tesla:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "attackVector": "LOCAL",
+          "attackComplexity": "LOW",
+          "privilegesRequired": "LOW",
+          "userInteraction": "NONE",
+          "scope": "UNCHANGED",
+          "confidentialityImpact": "HIGH",
+          "integrityImpact": "HIGH",
+          "availabilityImpact": "HIGH",
+          "baseScore": 7.8,
+          "baseSeverity": "HIGH"
+        },
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.9
+      }
+    },
+    "publishedDate": "2022-11-19T00:15Z",
+    "lastModifiedDate": "2022-11-29T15:42Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2018-3855",
+        "ASSIGNER": "talos-cna@cisco.com"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-415"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://talosintelligence.com/vulnerability_reports/TALOS-2018-0538",
+            "name": "https://talosintelligence.com/vulnerability_reports/TALOS-2018-0538",
+            "refsource": "MISC",
+            "tags": [
+              "Exploit",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://www.securityfocus.com/bid/104023",
+            "name": "104023",
+            "refsource": "BID",
+            "tags": [
+              "Third Party Advisory",
+              "VDB Entry"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "In Hyland Perceptive Document Filters 11.4.0.2647 - x86/x64 Windows/Linux, a crafted OpenDocument document can lead to a SkCanvas object double free resulting in direct code execution."
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "OR",
+          "children": [],
+          "cpe_match": [
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:hyland:perceptive_document_filters:11.4.0.2647:*:*:*:*:*:*:*",
+              "cpe_name": []
+            },
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:hyland:perceptive_document_filters:11.2.0.1732:*:*:*:*:*:*:*",
+              "cpe_name": []
+            }
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          "attackVector": "LOCAL",
+          "attackComplexity": "LOW",
+          "privilegesRequired": "NONE",
+          "userInteraction": "REQUIRED",
+          "scope": "UNCHANGED",
+          "confidentialityImpact": "HIGH",
+          "integrityImpact": "HIGH",
+          "availabilityImpact": "HIGH",
+          "baseScore": 7.8,
+          "baseSeverity": "HIGH"
+        },
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.9
+      },
+      "baseMetricV2": {
+        "cvssV2": {
+          "version": "2.0",
+          "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+          "accessVector": "NETWORK",
+          "accessComplexity": "MEDIUM",
+          "authentication": "NONE",
+          "confidentialityImpact": "PARTIAL",
+          "integrityImpact": "PARTIAL",
+          "availabilityImpact": "PARTIAL",
+          "baseScore": 6.8
+        },
+        "severity": "MEDIUM",
+        "exploitabilityScore": 8.6,
+        "impactScore": 6.4,
+        "obtainAllPrivilege": false,
+        "obtainUserPrivilege": false,
+        "obtainOtherPrivilege": false,
+        "userInteractionRequired": true
+      }
+    },
+    "publishedDate": "2018-04-26T20:29Z",
+    "lastModifiedDate": "2022-11-28T22:05Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2021-43037",
+        "ASSIGNER": "cve@mitre.org"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-427"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://helpdesk.kaseya.com/hc/en-gb/articles/4412762258961",
+            "name": "https://helpdesk.kaseya.com/hc/en-gb/articles/4412762258961",
+            "refsource": "MISC",
+            "tags": [
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "https://www.cyberonesecurity.com/blog/exploiting-kaseya-unitrends-backup-appliance-part-1",
+            "name": "https://www.cyberonesecurity.com/blog/exploiting-kaseya-unitrends-backup-appliance-part-1",
+            "refsource": "MISC",
+            "tags": [
+              "Exploit",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://www.cyberonesecurity.com/blog/exploiting-kaseya-unitrends-backup-appliance-part-2",
+            "name": "https://www.cyberonesecurity.com/blog/exploiting-kaseya-unitrends-backup-appliance-part-2",
+            "refsource": "MISC",
+            "tags": [
+              "Exploit",
+              "Third Party Advisory"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "An issue was discovered in Kaseya Unitrends Backup Appliance before 10.5.5. The Unitrends Windows agent was vulnerable to DLL injection and binary planting due to insecure default permissions. This allowed privilege escalation from an unprivileged user to SYSTEM."
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "OR",
+          "children": [],
+          "cpe_match": [
+            {
+              "vulnerable": true,
+              "cpe23Uri": "cpe:2.3:a:kaseya:unitrends_backup:*:*:*:*:*:*:*:*",
+              "versionStartIncluding": "10.0",
+              "versionEndExcluding": "10.5.5",
+              "cpe_name": []
+            }
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          "attackVector": "LOCAL",
+          "attackComplexity": "LOW",
+          "privilegesRequired": "NONE",
+          "userInteraction": "REQUIRED",
+          "scope": "UNCHANGED",
+          "confidentialityImpact": "HIGH",
+          "integrityImpact": "HIGH",
+          "availabilityImpact": "HIGH",
+          "baseScore": 7.8,
+          "baseSeverity": "HIGH"
+        },
+        "exploitabilityScore": 1.8,
+        "impactScore": 5.9
+      },
+      "baseMetricV2": {
+        "cvssV2": {
+          "version": "2.0",
+          "vectorString": "AV:L/AC:M/Au:N/C:C/I:C/A:C",
+          "accessVector": "LOCAL",
+          "accessComplexity": "MEDIUM",
+          "authentication": "NONE",
+          "confidentialityImpact": "COMPLETE",
+          "integrityImpact": "COMPLETE",
+          "availabilityImpact": "COMPLETE",
+          "baseScore": 6.9
+        },
+        "severity": "MEDIUM",
+        "exploitabilityScore": 3.4,
+        "impactScore": 10.0,
+        "acInsufInfo": false,
+        "obtainAllPrivilege": false,
+        "obtainUserPrivilege": false,
+        "obtainOtherPrivilege": false,
+        "userInteractionRequired": true
+      }
+    },
+    "publishedDate": "2021-12-06T04:15Z",
+    "lastModifiedDate": "2022-11-28T21:40Z"
+  },
+  {
+    "cve": {
+      "data_type": "CVE",
+      "data_format": "MITRE",
+      "data_version": "4.0",
+      "CVE_data_meta": {
+        "ID": "CVE-2016-6989",
+        "ASSIGNER": "psirt@adobe.com"
+      },
+      "problemtype": {
+        "problemtype_data": [
+          {
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-787"
+              }
+            ]
+          }
+        ]
+      },
+      "references": {
+        "reference_data": [
+          {
+            "url": "https://helpx.adobe.com/security/products/flash-player/apsb16-32.html",
+            "name": "https://helpx.adobe.com/security/products/flash-player/apsb16-32.html",
+            "refsource": "CONFIRM",
+            "tags": [
+              "Patch",
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "http://www.securityfocus.com/bid/93490",
+            "name": "93490",
+            "refsource": "BID",
+            "tags": [
+              "Broken Link",
+              "Third Party Advisory",
+              "VDB Entry"
+            ]
+          },
+          {
+            "url": "https://security.gentoo.org/glsa/201610-10",
+            "name": "GLSA-201610-10",
+            "refsource": "GENTOO",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "http://www.securitytracker.com/id/1036985",
+            "name": "1036985",
+            "refsource": "SECTRACK",
+            "tags": [
+              "Broken Link",
+              "Third Party Advisory",
+              "VDB Entry"
+            ]
+          },
+          {
+            "url": "http://rhn.redhat.com/errata/RHSA-2016-2057.html",
+            "name": "RHSA-2016:2057",
+            "refsource": "REDHAT",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "description_data": [
+          {
+            "lang": "en",
+            "value": "Adobe Flash Player before 18.0.0.382 and 19.x through 23.x before 23.0.0.185 on Windows and OS X and before 11.2.202.637 on Linux allows attackers to execute arbitrary code or cause a denial of service (memory corruption) via unspecified vectors, a different vulnerability than CVE-2016-4273, CVE-2016-6982, CVE-2016-6983, CVE-2016-6984, CVE-2016-6985, CVE-2016-6986, and CVE-2016-6990."
+          }
+        ]
+      }
+    },
+    "configurations": {
+      "CVE_data_version": "4.0",
+      "nodes": [
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:adobe:flash_player:*:*:*:*:*:chrome:*:*",
+                  "versionEndIncluding": "23.0.0.162",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:google:chrome_os:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:adobe:flash_player:*:*:*:*:*:internet_explorer:*:*",
+                  "versionEndIncluding": "23.0.0.162",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:adobe:flash_player:*:*:*:*:*:edge:*:*",
+                  "versionEndIncluding": "23.0.0.162",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_8.1:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_10:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:adobe:flash_player:*:*:*:*:esr:*:*:*",
+                  "versionEndIncluding": "18.0.0.375",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:adobe:flash_player_desktop_runtime:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "23.0.0.162",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        },
+        {
+          "operator": "AND",
+          "children": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:adobe:flash_player:*:*:*:*:*:linux:*:*",
+                  "versionEndIncluding": "11.2.202.635",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ],
+          "cpe_match": []
+        }
+      ]
+    },
+    "impact": {
+      "baseMetricV3": {
+        "cvssV3": {
+          "version": "3.1",
+          "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          "attackVector": "NETWORK",
+          "attackComplexity": "LOW",
+          "privilegesRequired": "NONE",
+          "userInteraction": "REQUIRED",
+          "scope": "UNCHANGED",
+          "confidentialityImpact": "HIGH",
+          "integrityImpact": "HIGH",
+          "availabilityImpact": "HIGH",
+          "baseScore": 8.8,
+          "baseSeverity": "HIGH"
+        },
+        "exploitabilityScore": 2.8,
+        "impactScore": 5.9
+      },
+      "baseMetricV2": {
+        "cvssV2": {
+          "version": "2.0",
+          "vectorString": "AV:N/AC:M/Au:N/C:C/I:C/A:C",
+          "accessVector": "NETWORK",
+          "accessComplexity": "MEDIUM",
+          "authentication": "NONE",
+          "confidentialityImpact": "COMPLETE",
+          "integrityImpact": "COMPLETE",
+          "availabilityImpact": "COMPLETE",
+          "baseScore": 9.3
+        },
+        "severity": "HIGH",
+        "exploitabilityScore": 8.6,
+        "impactScore": 10.0,
+        "acInsufInfo": false,
+        "obtainAllPrivilege": false,
+        "obtainUserPrivilege": false,
+        "obtainOtherPrivilege": false,
+        "userInteractionRequired": true
+      }
+    },
+    "publishedDate": "2016-10-13T20:00Z",
+    "lastModifiedDate": "2022-11-18T20:17Z"
+  }
+]
